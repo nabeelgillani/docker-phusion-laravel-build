@@ -2,12 +2,12 @@
 Laravel CI environment
 
 To build:
-docker build -t ozkaa/laravel-build .
+docker build -t joeniland/phusion-laravel-build .
 
 To run Unit tests
-docker run -it --volume=/Users/oscarfrowijn/PhpstormProjects/staff-dir-change/:/app --workdir="/app" ozkaa/laravel-build phpunit
+docker run -it --volume=/dev/my-project:/app --workdir="/app" joeniland/phusion-laravel-build phpunit
 
-Where volume = staffdir volume
+Where volume = project root
 
 PHPunit is run automatically and output should be:
 
