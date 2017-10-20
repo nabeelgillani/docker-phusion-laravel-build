@@ -31,8 +31,12 @@ RUN add-apt-repository -y ppa:ondrej/php && \
   apt-get -y upgrade && \
   apt-get -y install nodejs npm supervisor wget git apache2 php-xdebug libapache2-mod-php5.6 php5.6 pwgen php5.6-apc php5.6-mcrypt php5.6-gd php5.6-xml php5.6-mbstring php5.6-curl php5.6-dev php5.6-sybase freetds-common libsybdb5 php5.6-gettext zip unzip php5.6-zip jq && \
   apt-get -y autoremove && \
-  npm install -g n && \
+  npm install -g --silent n \
+          gulp-cli \
+          bower \
+          yarn && \
   n stable && \
+  yarn global add node-sass && \
   ln -sf /usr/local/n/versions/node/8.2.1/bin/node /usr/bin/node && \
   echo "ServerName localhost" >> /etc/apache2/apache2.conf && \
   echo "[global]" > /etc/freetds/freetds.conf && \
